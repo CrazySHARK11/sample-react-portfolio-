@@ -1,0 +1,211 @@
+@use "./global/global" ;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import "animate.css";
+
+$thcol: #ff3535 ;
+
+// ========================== Header ===========================
+header{
+    position: fixed;
+    width: 100%;
+    transition: 0.3s;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards ;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #000;
+}
+::-webkit-scrollbar-thumb{
+   background-color: $thcol;
+   width: 10px;
+}
+
+.sticked{
+    background-color: #000000;
+    padding: 5px 0;
+}
+
+// ========================== Header ===========================
+
+
+// ========================== Hero section ===========================
+.logo svg{
+    font-size: 2em;
+    fill: $thcol;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    padding: 10px 0 ;
+    justify-content: space-between;
+  
+}
+.menu{
+    display: flex;
+    gap: 2em;
+    a{
+        font-weight: 500;
+        &::after{
+            content: '';
+            transition: 0.3s;
+            width: 0%;
+            border-radius: 10px;
+            height: 2px;
+            display: block;
+            background-color: $thcol;
+        }
+        &:hover::after{
+            width: 100%;
+        }
+    }
+}
+.button{
+    width: 160px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: $thcol;
+}
+.hero_con{
+    width: min(600px , 100%);
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    animation: fadeInUp 1s 1s forwards;
+    .sub-head{
+        font-size: 1.5em;
+        color: $thcol;
+        font-weight: 500;
+    }
+    h1{
+        font-size: min(4em , 12vw);
+    }
+}
+.hero{
+    padding: 0 min(100px , 10% );
+    align-items: center;
+    display: flex;
+}
+// ========================== Hero section ===========================
+
+// ========================== About ===========================
+.about_con{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.about p {
+text-align: center;
+}
+.aboutCard{
+    width: 400px;
+    min-height: 350px;
+    transition: 0.3s;
+    display: grid;
+    padding: 30px;
+    background-color: #ff3535;
+    p{
+        text-align: left;
+        color: #fff;
+    }
+    &:hover{
+        transform: translate(0 , -10px);
+    }
+    svg{
+        font-size: 3em;
+    }
+    h3{
+        font-size: 2em;
+    }
+    a{
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap:1em;
+        svg{
+            font-size: 1.9em;
+        }
+    }
+}
+// ========================== About ===========================
+
+
+
+
+
+// ========================== Media ===========================
+.menu_btn{
+    font-size: 2em;
+    display: none;
+    cursor: pointer;
+    fill: $thcol;
+}
+
+@media (max-width : 768px){
+    .menu_btn{
+        display: block;
+    }
+.menu{
+        left: 0;
+        overflow: hidden;
+        flex-direction: column;
+        z-index: 10;
+        align-items: flex-end;
+        gap: 0;
+        transition: 0.2s;
+        top: 58px;
+        width: 100% ;
+        padding: 0 10px;
+        background-color: $thcol;
+        position: fixed;
+        max-height: 0px;
+        a{
+            margin: 10px;
+        }
+     }
+   .active{
+    max-height: 200px;
+     }
+
+     .hero_con{
+        text-align: center;
+        align-items: center;
+     }
+     .credits{
+        flex-direction: column;
+        margin-top: 2em;
+        text-align: center;
+     }
+ }
+// =========================== Footer =============================
+.socials{
+    display: flex;
+    font-size: 1.5em;
+    gap: .3em;
+    margin-top: .5em;
+    a svg{
+        padding: 5px;
+        fill: #000;
+        background-color: #e1e1e1;
+        border-radius: 50%;
+        &:hover{
+            fill:$thcol;
+        }
+    }
+}
+.credits{
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.footer-menu{
+ justify-content: center;
+ margin: 10px 0;
+}
+// =========================== Footer ============================= 
